@@ -1,32 +1,18 @@
 package co.edu.uniquindio.clinica.controladores;
 
 import javafx.fxml.FXML;
-import javafx.scene.text.Text;
+import javafx.scene.control.Label;
+import co.edu.uniquindio.clinica.modelo.Cita;
 
 public class FacturaControlador {
 
     @FXML
-    private Text txtServicio;
+    private Label txtPaciente, txtServicio, txtFecha, txtPrecioTotal;
 
-    @FXML
-    private Text txtFecha;
-
-    @FXML
-    private Text txtPaciente;
-
-    @FXML
-    private Text txtSubtxtPrecioTotalTotal;
-
-    // Método para inicializar los datos de la factura
-    public void setDatosFactura(String servicio, String fecha, String paciente, double precioTotal) {
-        txtServicio.setText(servicio);
-        txtFecha.setText(fecha);
-        txtPaciente.setText(paciente);
-        txtSubtxtPrecioTotalTotal.setText(String.format("$%.2f", precioTotal));
-    }
-
-    @FXML
-    public void initialize() {
-        // Puedes agregar código para inicializar algo por defecto si es necesario
+    public void cargarFactura(Cita cita) {
+        txtPaciente.setText(cita.getPaciente().getNombre());
+        txtServicio.setText(cita.getServicio().getNombre());
+        txtFecha.setText(cita.getFecha().toString());
+        txtPrecioTotal.setText(String.valueOf(cita.calcularPrecioTotal()));
     }
 }

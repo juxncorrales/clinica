@@ -6,22 +6,22 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="262.0" spacing="50.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.clinica.controladores.FacturaControlador">
     <children>
-        <Text fx:id="txtFactura" strokeType="OUTSIDE" strokeWidth="0.0" text="Factura" textAlignment="CENTER" wrappingWidth="100.27371215820312">
+        <Label text="Factura" textAlignment="CENTER">
             <font>
                 <Font size="30.0" />
             </font>
             <VBox.margin>
                 <Insets top="20.0" />
             </VBox.margin>
-        </Text>
+        </Label>
         <GridPane prefHeight="146.0" prefWidth="311.0">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.60000762939455" minWidth="10.0" prefWidth="84.4000023841858" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.6" minWidth="10.0" prefWidth="45.99999761581421" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.6" minWidth="10.0" prefWidth="84.4" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.6" minWidth="10.0" prefWidth="46.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -30,46 +30,46 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Servicio:" GridPane.rowIndex="1">
+                <Label text="Servicio:" GridPane.rowIndex="1">
                     <font>
                         <Font size="15.0" />
                     </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:" GridPane.rowIndex="2">
+                </Label>
+                <Label text="Fecha:" GridPane.rowIndex="2">
                     <font>
                         <Font size="15.0" />
                     </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Precio Total:" GridPane.rowIndex="3">
+                </Label>
+                <Label text="Precio Total:" GridPane.rowIndex="3">
                     <font>
                         <Font size="15.0" />
                     </font>
-                </Text>
-                <Text fx:id="txtServicio" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="61.6708984375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                </Label>
+                <Label fx:id="txtServicio" text="Servicio" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <font>
                         <Font size="15.0" />
                     </font>
-                </Text>
-                <Text fx:id="txtFecha" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="63.6708984375" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                </Label>
+                <Label fx:id="txtFecha" text="Fecha" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <font>
                         <Font size="15.0" />
                     </font>
-                </Text>
-                <Text fx:id="txtSubtxtPrecioTotalTotal" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="62.6708984375" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                </Label>
+                <Label fx:id="txtPrecioTotal" text="Precio" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <font>
                         <Font size="15.0" />
                     </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Paciente:">
+                </Label>
+                <Label text="Paciente:">
                     <font>
                         <Font size="15.0" />
                     </font>
-                </Text>
-                <Text fx:id="txtPaciente" layoutX="249.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="63.6708984375" GridPane.columnIndex="1">
+                </Label>
+                <Label fx:id="txtPaciente" text="Paciente" textAlignment="CENTER" GridPane.columnIndex="1">
                     <font>
                         <Font size="15.0" />
                     </font>
-                </Text>
+                </Label>
             </children>
             <VBox.margin>
                 <Insets left="50.0" right="50.0" />

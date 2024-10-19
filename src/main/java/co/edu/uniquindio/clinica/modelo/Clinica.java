@@ -22,8 +22,8 @@ public class Clinica {
         System.out.println("Paciente registrado: " + paciente.getNombre());
     }
 
-    // Listar pacientes
-    public List<Paciente> listarPacientes() {
+    // Método para obtener la lista de pacientes
+    public List<Paciente> getPacientes() {
         return pacientes;
     }
 
@@ -39,7 +39,12 @@ public class Clinica {
         System.out.println("Cita agendada con éxito.");
     }
 
-    // Listar citas
+    // Método para obtener la lista de citas
+    public List<Cita> getCitas() {
+        return citas;
+    }
+
+    // Listar citas (puedes mantenerlo si lo necesitas)
     public List<Cita> listarCitas() {
         return citas;
     }
@@ -55,6 +60,11 @@ public class Clinica {
         servicios.add(new Servicio("1", "Consulta General", 100.0));
         servicios.add(new Servicio("2", "Odontología", 200.0));
         servicios.add(new Servicio("3", "Radiografía", 300.0));
+    }
+
+    // Método para obtener la lista de servicios
+    public List<Servicio> getServicios() {
+        return servicios;
     }
 
     // Listar servicios disponibles

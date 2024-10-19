@@ -12,7 +12,7 @@
 
 <VBox alignment="CENTER" prefHeight="361.0" prefWidth="465.0" spacing="20" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.clinica.controladores.RegistroPacienteControlador">
 
-    <Label fx:id="txtAgendarCita" text="Agendar Cita">
+    <Label text="Agendar Cita">
         <font>
             <Font size="20.0" />
         </font>
@@ -20,7 +20,7 @@
 
 
     <HBox alignment="CENTER" spacing="10">
-        <Label fx:id="txtPaciente" prefHeight="18.0" prefWidth="50.0" text="Paciente:" />
+        <Label prefHeight="18.0" prefWidth="50.0" text="Paciente:" />
         <TextField fx:id="pacientetxt" prefHeight="26.0" prefWidth="186.0">
          <HBox.margin>
             <Insets />
@@ -30,7 +30,7 @@
 
 
     <HBox alignment="CENTER" prefHeight="26.0" prefWidth="382.0" spacing="10">
-        <Label fx:id="txtServicio" prefHeight="18.0" prefWidth="46.0" text="Servicio:" />
+        <Label prefHeight="18.0" prefWidth="46.0" text="Servicio:" />
       <ComboBox fx:id="comboServicio" onAction="#seleccionarServicio" prefWidth="186.0">
          <HBox.margin>
             <Insets left="6.0" />
@@ -43,7 +43,7 @@
 
 
     <HBox alignment="CENTER" spacing="10">
-        <Label fx:id="txtFecha" prefHeight="18.0" prefWidth="33.0" text="Fecha:" />
+        <Label prefHeight="18.0" prefWidth="33.0" text="Fecha:" />
       <DatePicker fx:id="FechaDate" onAction="#seleccionarFecha" prefHeight="26.0" prefWidth="186.0">
          <HBox.margin>
             <Insets left="16.0" />
@@ -53,7 +53,7 @@
 
 
     <HBox alignment="CENTER" spacing="10">
-        <Label fx:id="txtHora" prefHeight="18.0" prefWidth="29.0" text="Hora:" />
+        <Label prefHeight="18.0" prefWidth="29.0" text="Hora:" />
         <TextField fx:id="horatxt" prefHeight="26.0" prefWidth="186.0">
          <HBox.margin>
             <Insets left="22.0" />

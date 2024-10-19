@@ -1,58 +1,36 @@
-//package co.edu.uniquindio.clinica.controladores;
-//
-//import javafx.fxml.FXML;
-//import javafx.scene.control.ListView;
-//
-//public class ListaPacientesControlador {
-//    @FXML
-//    private ListView<String> listaPacientes;
-//
-//    public void inicializar() {
-//        // Aquí puedes cargar la lista de pacientes desde la clase `Clinica`
-//    }
-//}
 package co.edu.uniquindio.clinica.controladores;
 
-import co.edu.uniquindio.clinica.modelo.Paciente;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import co.edu.uniquindio.clinica.modelo.Paciente;
+import co.edu.uniquindio.clinica.modelo.Clinica;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class ListaPacientesControlador extends AbstractControlador {
+public class ListaPacientesControlador {
 
     @FXML
     private TableView<Paciente> tablaPacientes;
-
     @FXML
-    private TableColumn<Paciente, String> columnaNombre;
+    private TableColumn<Paciente, String> colIdentificacion, colNombre, colTelefono, colCorreo, colSuscripcion;
 
-    @FXML
-    private TableColumn<Paciente, String> columnaDocumento;
-
-    @FXML
-    private TableColumn<Paciente, String> columnaTelefono;
-
-    private ObservableList<Paciente> listaPacientes;
+    private Clinica sistemaClinica;
 
     @FXML
     public void initialize() {
-        // Inicializar las columnas de la tabla con los valores de la clase Paciente
-        columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        columnaDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
-        columnaTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
-    }
+        colIdentificacion.setCellValueFactory(new PropertyValueFactory<>("cedula"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        colCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
+        colSuscripcion.setCellValueFactory(new PropertyValueFactory<>("tipoSuscripcion"));
 
-    public void cargarPacientes() {
-        // Obtener la lista de pacientes desde la clase Clinica y cargarla en la tabla
-        listaPacientes = FXCollections.observableArrayList(getClinica().listarPacientes());
-        tablaPacientes.setItems(listaPacientes);
+        actualizarListaPacientes();
     }
 
     public void actualizarListaPacientes() {
-        // Actualizar la lista cuando se agregue o elimine un paciente
-        listaPacientes.setAll(getClinica().listarPacientes());
+        ObservableList<Paciente> listaPacientes = FXCollections.observableArrayList(sistemaClinica.getPacientes());
+        tablaPacientes.setItems(listaPacientes);
     }
 }

@@ -2,25 +2,16 @@ package co.edu.uniquindio.clinica.controladores;
 
 import co.edu.uniquindio.clinica.modelo.Clinica;
 import lombok.Getter;
-
+import lombok.Setter;
 
 public abstract class AbstractControlador {
 
-
     @Getter
+    @Setter
     private Clinica clinica;
 
-
-    public void inicializarClinica(Clinica clinica){
-        this.clinica = clinica;
-    }
-
-
-    public Clinica getClinica() {
-        return clinica;
-    }
-
-    public void setClinica(Clinica clinica) {
+    // Método para inicializar la clínica
+    public void inicializarClinica(Clinica clinica) {
         this.clinica = clinica;
     }
 }

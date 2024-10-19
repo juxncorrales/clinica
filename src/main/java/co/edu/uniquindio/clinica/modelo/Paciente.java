@@ -1,6 +1,5 @@
 package co.edu.uniquindio.clinica.modelo;
 
-
 import co.edu.uniquindio.clinica.modelo.factory.Suscripcion;
 
 public class Paciente {
@@ -11,7 +10,8 @@ public class Paciente {
     private String correo;
     private Suscripcion suscripcion;
 
-    public Paciente(String cedula, String nombre, String telefono, String correo) {
+    // Constructor con todos los atributos
+    public Paciente(String cedula, String nombre, String telefono, String correo, Suscripcion suscripcion) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
