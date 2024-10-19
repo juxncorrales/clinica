@@ -52,9 +52,9 @@ public class Clinica {
 
     // Cargar los servicios disponibles
     private void cargarServicios() {
-        servicios.add(new Servicio(1, "Consulta General", 100.0));
-        servicios.add(new Servicio(2, "Odontología", 200.0));
-        servicios.add(new Servicio(3, "Radiografía", 300.0));
+        servicios.add(new Servicio("1", "Consulta General", 100.0));
+        servicios.add(new Servicio("2", "Odontología", 200.0));
+        servicios.add(new Servicio("3", "Radiografía", 300.0));
     }
 
     // Listar servicios disponibles
