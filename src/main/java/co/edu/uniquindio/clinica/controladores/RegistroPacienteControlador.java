@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class RegistroPacienteControlador {
+public class RegistroPacienteControlador extends AbstractControlador {
 
     @FXML
     private TextField cedulatxt;

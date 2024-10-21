@@ -11,7 +11,7 @@ import javafx.collections.ObservableList;
 import co.edu.uniquindio.clinica.modelo.Cita;
 import co.edu.uniquindio.clinica.modelo.Clinica;
 
-public class ListaCitasControlador {
+public class ListaCitasControlador extends AbstractControlador {
 
     @FXML
     private Button bttCancelarCita;

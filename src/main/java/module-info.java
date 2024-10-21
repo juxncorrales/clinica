@@ -11,4 +11,5 @@ module co.edu.uniquindio.clinica {
     opens co.edu.uniquindio.clinica.controladores to javafx.fxml;
     exports co.edu.uniquindio.clinica.app;
     opens co.edu.uniquindio.clinica.app to javafx.fxml;
+
 }

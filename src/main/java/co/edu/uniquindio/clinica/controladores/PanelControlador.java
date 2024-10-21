@@ -15,47 +15,48 @@ public class PanelControlador {
     private final Clinica clinica;
 
     public PanelControlador() {
-        this.clinica = new Clinica(); // Se crea una única instancia de la clase Clinica
+        // Usamos el método Singleton para obtener la única instancia de Clinica
+        this.clinica = Clinica.getInstancia();
     }
 
     // Método para mostrar el panel de registro de pacientes
     public void mostrarRegistroPaciente(ActionEvent actionEvent) {
         Parent node = cargarPanel("/registroPaciente.fxml");
-        panelPrincipal.getChildren().setAll(node); // Reemplaza el contenido del panel principal con el nuevo panel
+        panelPrincipal.getChildren().setAll(node);
     }
 
     // Método para mostrar la lista de pacientes
     public void mostrarListaPacientes(ActionEvent actionEvent) {
         Parent node = cargarPanel("/listaPacientes.fxml");
-        panelPrincipal.getChildren().setAll(node); // Reemplaza el contenido del panel principal con el nuevo panel
+        panelPrincipal.getChildren().setAll(node);
     }
 
     // Método para mostrar el panel de registro de citas
     public void mostrarRegistroCita(ActionEvent actionEvent) {
-        Parent node = cargarPanel("/registroCita.fxml");
-        panelPrincipal.getChildren().setAll(node); // Reemplaza el contenido del panel principal con el nuevo panel
+        Parent node = cargarPanel("/registroPaciente.fxml");
+        panelPrincipal.getChildren().setAll(node);
     }
 
     // Método para mostrar la lista de citas
     public void mostrarListaCitas(ActionEvent actionEvent) {
         Parent node = cargarPanel("/listaCitas.fxml");
-        panelPrincipal.getChildren().setAll(node); // Reemplaza el contenido del panel principal con el nuevo panel
+        panelPrincipal.getChildren().setAll(node);
     }
 
     // Método auxiliar para cargar un panel específico (FXML) y pasar la instancia de la clínica
+    // Método auxiliar para cargar un panel específico (FXML) y pasar la instancia de la clínica
     private Parent cargarPanel(String fxmlFile) {
         try {
-            // Cargar el archivo FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent node = loader.load();
 
             // Inicializar la clínica en el controlador del archivo cargado
             AbstractControlador controlador = loader.getController();
-            controlador.inicializarClinica(clinica);
+            controlador.inicializarClinica();  // Inicializar el Singleton
 
             return node;
         } catch (Exception e) {
-            e.printStackTrace(); // Manejo de errores en la carga del FXML
+            e.printStackTrace();  // Manejo de errores en la carga del FXML
         }
         return null;
     }

@@ -10,8 +10,8 @@ public abstract class AbstractControlador {
     @Setter
     private Clinica clinica;
 
-    // Método para inicializar la clínica
-    public void inicializarClinica(Clinica clinica) {
-        this.clinica = clinica;
+    // Método para inicializar la clínica usando el Singleton
+    public void inicializarClinica() {
+        this.clinica = Clinica.getInstancia();  // Usamos la única instancia de la clase
     }
 }

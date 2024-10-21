@@ -5,15 +5,27 @@ import java.util.List;
 
 public class Clinica {
 
+    // Instancia pública de la clase Clinica
+    public static Clinica INSTANCIA;
+
     private List<Paciente> pacientes;
     private List<Cita> citas;
     private List<Servicio> servicios;
 
-    public Clinica() {
+    // Constructor privado para evitar que se creen instancias fuera de la clase
+    private Clinica() {
         this.pacientes = new ArrayList<>();
         this.citas = new ArrayList<>();
         this.servicios = new ArrayList<>();
         cargarServicios();
+    }
+
+    // Método para obtener la única instancia de la clase
+    public static Clinica getInstancia() {
+        if (INSTANCIA == null) {
+            INSTANCIA = new Clinica();
+        }
+        return INSTANCIA;
     }
 
     // Método para registrar pacientes
@@ -29,7 +41,6 @@ public class Clinica {
 
     // Método para agendar una cita
     public void agendarCita(Cita cita) throws Exception {
-        // Validar si la cita no se cruza con otra
         for (Cita c : citas) {
             if (c.getFecha().equals(cita.getFecha())) {
                 throw new Exception("Ya existe una cita en este horario.");
@@ -44,12 +55,7 @@ public class Clinica {
         return citas;
     }
 
-    // Listar citas (puedes mantenerlo si lo necesitas)
-    public List<Cita> listarCitas() {
-        return citas;
-    }
-
-    // Cancelar cita
+    // Método para cancelar una cita
     public void cancelarCita(Cita cita) {
         citas.remove(cita);
         System.out.println("Cita cancelada.");
@@ -67,7 +73,7 @@ public class Clinica {
         return servicios;
     }
 
-    // Listar servicios disponibles
+    // Método para listar servicios disponibles
     public List<Servicio> listarServicios() {
         return servicios;
     }

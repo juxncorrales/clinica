@@ -9,7 +9,7 @@ import co.edu.uniquindio.clinica.modelo.Clinica;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class ListaPacientesControlador {
+public class ListaPacientesControlador extends AbstractControlador {
 
     @FXML
     private TableView<Paciente> tablaPacientes;
