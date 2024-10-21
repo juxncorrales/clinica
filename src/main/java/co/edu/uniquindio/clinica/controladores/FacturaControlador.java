@@ -9,10 +9,11 @@ public class FacturaControlador {
     @FXML
     private Label txtPaciente, txtServicio, txtFecha, txtPrecioTotal;
 
+    // Método que recibe una cita y muestra los detalles en la vista
     public void cargarFactura(Cita cita) {
-        txtPaciente.setText(cita.getPaciente().getNombre());
-        txtServicio.setText(cita.getServicio().getNombre());
-        txtFecha.setText(cita.getFecha().toString());
-        txtPrecioTotal.setText(String.valueOf(cita.calcularPrecioTotal()));
+        txtPaciente.setText(cita.getPaciente().getNombre());  // Mostrar nombre del paciente
+        txtServicio.setText(cita.getServicio().getNombre());  // Mostrar nombre del servicio
+        txtFecha.setText(cita.getFecha().toString());         // Mostrar fecha de la cita
+        txtPrecioTotal.setText(String.valueOf(cita.calcularPrecioTotal())); // Mostrar precio total calculado
     }
 }
