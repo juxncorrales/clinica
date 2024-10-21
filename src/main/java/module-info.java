@@ -1,19 +1,14 @@
 module co.edu.uniquindio.clinica {
-    // Requerimientos de JavaFX
     requires javafx.controls;
     requires javafx.fxml;
-
-    // Requerimientos para Lombok
     requires static lombok;
-
-    // Requerimientos para Simple Java Mail
+    requires org.simplejavamail.core;
     requires org.simplejavamail;
-    requires org.simplejavamail.core; // solo si realmente necesitas este módulo
 
-    // Abrir paquetes para la reflexión (necesario para JavaFX)
-    opens co.edu.uniquindio.clinica to javafx.fxml;
-    opens co.edu.uniquindio.clinica.controladores to javafx.fxml;
-
-    // Exportar paquetes
+    opens co.edu.uniquindio.clinica.utils to javafx.fxml;
+    exports co.edu.uniquindio.clinica.utils;
     exports co.edu.uniquindio.clinica.controladores;
+    opens co.edu.uniquindio.clinica.controladores to javafx.fxml;
+    exports co.edu.uniquindio.clinica.app;
+    opens co.edu.uniquindio.clinica.app to javafx.fxml;
 }
