@@ -33,7 +33,7 @@ public class PanelControlador {
 
     // Método para mostrar el panel de registro de citas
     public void mostrarRegistroCita(ActionEvent actionEvent) {
-        Parent node = cargarPanel("/registroPaciente.fxml");
+        Parent node = cargarPanel("/crearCita.fxml");
         panelPrincipal.getChildren().setAll(node);
     }
 

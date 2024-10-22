@@ -7,6 +7,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 
 import java.time.LocalDate;
 
@@ -19,7 +20,10 @@ public class CrearCitaControlador extends AbstractControlador {
     private ComboBox<String> comboServicio;
 
     @FXML
-    private DatePicker FechaDate;
+    private DatePicker fechaDate;
+
+    @FXML
+    private Button btnconfirmarCita;
 
     @FXML
     public void initialize() {
@@ -37,15 +41,16 @@ public class CrearCitaControlador extends AbstractControlador {
     // Método que se ejecuta cuando el usuario selecciona una fecha en el DatePicker
     @FXML
     private void seleccionarFecha(ActionEvent event) {
-        LocalDate fechaSeleccionada = FechaDate.getValue();
+        LocalDate fechaSeleccionada = fechaDate.getValue();
         System.out.println("Fecha seleccionada: " + fechaSeleccionada);
     }
 
+    // Método que se ejecuta cuando se hace clic en el botón para confirmar la cita
     @FXML
-    public void registrarPaciente(ActionEvent actionEvent) {
+    public void registrarCita(ActionEvent event) {
         String paciente = pacientetxt.getText();
         String servicio = comboServicio.getValue();
-        LocalDate fecha = FechaDate.getValue();
+        LocalDate fecha = fechaDate.getValue();
         String hora = horatxt.getText();
 
         // Validar que todos los campos estén completos

@@ -29,7 +29,7 @@ public class ListaPacientesControlador extends AbstractControlador {
         colSuscripcion.setCellValueFactory(new PropertyValueFactory<>("tipoSuscripcion"));
 
         // Llenar la tabla con los datos de los pacientes
-        actualizarListaPacientes();
+        //actualizarListaPacientes();
     }
 
     public void actualizarListaPacientes() {
@@ -42,5 +42,6 @@ public class ListaPacientesControlador extends AbstractControlador {
     // Método para establecer la instancia de Clinica desde fuera del controlador
     public void setClinica(Clinica clinica) {
         this.sistemaClinica = clinica;
+        actualizarListaPacientes();
     }
 }

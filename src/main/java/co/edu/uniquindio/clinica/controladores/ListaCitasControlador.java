@@ -38,7 +38,7 @@ public class ListaCitasControlador extends AbstractControlador {
         precioColumn.setCellValueFactory(new PropertyValueFactory<>("precio"));
 
         // Actualiza la lista de citas al cargar la interfaz
-        actualizarListaCitas();
+
     }
 
     // Método para actualizar la lista de citas en la tabla
